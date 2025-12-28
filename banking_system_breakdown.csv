@@ -1,0 +1,19 @@
+Section,Line,Code,Pseudo Syntax,What It Does,Simple Analogy
+Analytics Service,468,class AnalyticsService(Microservice):,DEFINE analytics service,Creates analytics and reporting service,Building dashboard system
+Analytics Service,470,"def __init__(self, event_bus: EventBus):",DEFINE constructor,Initializes analytics service,Setting up analytics system
+Analytics Service,471-477,Call parent & init,SETUP service,Inherits and initializes metrics,Preparing data tracking
+Analytics Service,479,def setup_subscriptions(self):,IMPLEMENT subscriptions,Registers for various events,Listening for all activity
+Analytics Service,480,Subscribe to processed,LISTEN for processed transactions,Tracks completed transactions,Counting successful actions
+Analytics Service,481,Subscribe to fraud,LISTEN for fraud alerts,Tracks fraud detections,Monitoring fraud incidents
+Analytics Service,482,Subscribe to account,LISTEN for account updates,Tracks account changes,Following account activity
+Analytics Service,484,"async def track_transaction(self, event: Event):",DEFINE transaction tracker,Updates transaction metrics,Recording transaction stats
+Analytics Service,485,self.metrics['transactions_processed'] += 1,INCREMENT count,Increases transaction counter,Adding to total count
+Analytics Service,486,"self.metrics['total_volume'] += event.payload.get('amount', 0)",ADD to volume,Increases total money moved,Accumulating transaction value
+Analytics Service,488,"async def track_fraud(self, event: Event):",DEFINE fraud tracker,Updates fraud metrics,Recording fraud stats
+Analytics Service,489,self.metrics['fraud_alerts'] += 1,INCREMENT fraud count,Increases fraud counter,Counting fraud incidents
+Analytics Service,491,"async def track_account(self, event: Event):",DEFINE account tracker,Updates account metrics,Recording account activity
+Analytics Service,494-496,Calculate active accounts,COUNT unique accounts,Calculates number of active accounts,Determining active user base
+Analytics Service,498,def get_dashboard_data(self) -> Dict:,DEFINE dashboard method,Generates analytics data,Creating dashboard information
+Analytics Service,500-509,Build dashboard,CREATE metrics dict,Compiles all analytics data,Assembling performance report
+Analytics Service,506,Calculate fraud rate,COMPUTE fraud percentage,Calculates fraud rate,Determining fraud frequency
+Analytics Service,508,Calculate average,COMPUTE average value,Calculates average transaction,Determining typical amount

@@ -1,0 +1,51 @@
+Section,Line,Code,Pseudo Syntax,What It Does,Simple Analogy
+Imports and Setup,1-4,Module docstring,DOCUMENTATION header,Describes the banking system,Labeling the project
+Imports and Setup,5-16,Library imports,IMPORT required libraries,Brings in Python standard and third-party libraries,Gathering all necessary tools
+Imports and Setup,5,import asyncio,IMPORT async library,Enables asynchronous programming,Getting parallel processing capability
+Imports and Setup,6,import json,IMPORT JSON library,Enables JSON data handling,Getting data format converter
+Imports and Setup,7,import random,IMPORT random library,Enables random number generation,Getting unpredictability tool
+Imports and Setup,8,import uuid,IMPORT UUID library,Generates unique identifiers,Getting ID generator
+Imports and Setup,9,import time,IMPORT time library,Provides time-related functions,Getting timing utilities
+Imports and Setup,10,"from datetime import datetime, timedelta",IMPORT date/time tools,Date and time manipulation,Getting calendar and clock
+Imports and Setup,11,"from dataclasses import dataclass, asdict",IMPORT dataclass utilities,Creates data structures,Getting structured data containers
+Imports and Setup,12,from enum import Enum,IMPORT Enum class,Creates enumeration types,Getting predefined option sets
+Imports and Setup,13,"from typing import Dict, List, Optional, Any",IMPORT type hints,Enables static type checking,Getting data type specifications
+Imports and Setup,14,"from abc import ABC, abstractmethod",IMPORT abstract base classes,Creates abstract classes and methods,Getting template/blueprint tools
+Imports and Setup,15,import pandas as pd,IMPORT pandas,Data manipulation and analysis,Getting spreadsheet-like data tools
+Imports and Setup,16,import numpy as np,IMPORT numpy,Numerical computing,Getting math and array tools
+Imports and Setup,17,from collections import defaultdict,IMPORT defaultdict,Dictionary with default values,Getting automatic initialization dict
+Imports and Setup,18,import hashlib,IMPORT hashlib,Hash function implementations,Getting encryption/hashing tools
+Data Models,22,class TransactionType(Enum):,DEFINE enum,Transaction categories,Transaction type dropdown
+Data Models,23-27,Enum members,DEFINE categories,"Deposit, withdrawal, transfer, payment, fee",Listing actions
+Data Models,29,class AccountType(Enum):,DEFINE enum,Account categories,Account type selector
+Data Models,30-33,Enum members,DEFINE categories,"Checking, savings, business, investment",Listing account types
+Data Models,35,class TransactionStatus(Enum):,DEFINE enum,Transaction states,Status tracker
+Data Models,36-39,Enum members,DEFINE states,"Pending, completed, failed, fraud review",Listing states
+Data Models,41,@dataclass,DECORATOR,Auto method generation,Structured container
+Data Models,42,class Customer:,DEFINE class,Customer data model,Customer profile template
+Data Models,43-48,Customer fields,DEFINE attributes,"ID, name, email, phone, risk, KYC",Customer info fields
+Data Models,49,created_at: str = None,ADD field,Creation timestamp,Creation time
+Data Models,51,def __post_init__,POST INIT,Auto setup,Auto initialization
+Data Models,52-53,Set timestamp,AUTO SET,Sets current time,Auto record time
+Event System,107,class EventType(Enum):,DEFINE enum,Event categories,Event catalog
+Event System,108-113,Enum members,DEFINE events,"Transaction, fraud, account events",Event list
+Event System,115,@dataclass,DECORATOR,Auto methods,Structured event
+Event System,116,class Event:,DEFINE class,Event message,Event envelope
+Event System,117-122,Event fields,DEFINE attributes,"ID, type, payload, time",Event data
+Event System,132,class EventBus:,DEFINE class,Event-driven bus,Communication hub
+Event System,139,def subscribe,REGISTER,Add subscriber,Listening to events
+Event System,143,def publish,BROADCAST,Send event,Announcing event
+Customer Onboarding,170,class CustomerOnboardingService,DEFINE service,Customer onboarding,Registration desk
+Customer Onboarding,180,create_customer,DEFINE method,Creates customer,Registering user
+Customer Onboarding,204,event_bus.publish,PUBLISH,Announce customer,Announcement
+Account Service,210,class AccountService,DEFINE service,Account management,Account desk
+Account Service,216,setup_subscriptions,SUBSCRIBE,Listen for customers,Auto account creation
+Account Service,226,create_account,DEFINE method,Creates account,Opening account
+Account Service,266,event_bus.publish,PUBLISH,Account update,Announcement
+Fraud Detection,271,class FraudDetectionService,DEFINE service,Fraud detection,Security monitoring
+Fraud Detection,281,analyze_transaction,DEFINE method,Analyze fraud,Suspicious check
+Fraud Detection,313,calculate_fraud_score,DEFINE method,Compute score,Risk calculation
+Transaction Service,355,class TransactionService,DEFINE service,Transaction engine,Payment processor
+Transaction Service,366,create_transaction,DEFINE method,Create transaction,Initiating payment
+Transaction Service,416,process_transaction,DEFINE method,Execute transaction,Completing payment
+Transaction Service,457,handle_fraud_alert,DEFINE method,Handle fraud,Fraud response
